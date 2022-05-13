@@ -9,13 +9,12 @@ public class TriggerRestart : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         StartCoroutine(waiter());
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     IEnumerator waiter()
     {
         //Wait for 3 seconds
-        yield return new WaitForSeconds(5);
-
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
