@@ -58,4 +58,12 @@ public class PlayerController : MonoBehaviour {
 			gameController.OnPickUpCollectible(count);
 		}
 	}
+
+	void OnCollisionStay(Collision collider)
+	{
+		if (collider.gameObject.CompareTag("SpeedBoost"))
+		{
+			speed = 15;
+		}
+	}
 }
